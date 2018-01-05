@@ -1,8 +1,5 @@
 require 'pry'
 
-@parsed_string = []
-@string = []
-
 def menu
   print `clear`
   puts '---Ruby letters to ASCII---'
@@ -14,11 +11,8 @@ def menu
 end
 
 def convert
-  @string.each do |letter|
-    @parsed_string << letter
-    @parsed_string << letter.ord
-  end
-  puts @parsed_string
+  @string.map! { |l| { l => l.ord }}
+  puts @string
 end
 
 menu
